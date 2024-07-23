@@ -11,5 +11,9 @@
         public const string M07 = "User role not found!";
         public const string M08 = "System role not found!";
         public const string M09 = "Login successfully!";
+        public const string M10 = "Refresh token is required!";
+        public const string M11 = "Refresh token could not by generated because user not found!";
+        public const string M12 = "Refresh token could not by generated because user has not signed in!";
+        public const string M13 = "Token refreshed successfully!";
     }
 }

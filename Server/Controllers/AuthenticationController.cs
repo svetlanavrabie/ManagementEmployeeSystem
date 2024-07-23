@@ -27,5 +27,29 @@ namespace Server.Controllers
             var result = await _userAccount.CreateAsync(user);
             return Ok(result);
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> SignInAsync(Login user)
+        {
+            if (user == null)
+            {
+                return BadRequest(Messages.M02);
+            }
+
+            var result = await _userAccount.SignInAsync(user);
+            return Ok(result);
+        }
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshTokenAsync(RefreshToken token)
+        {
+            if (token == null)
+            {
+                return BadRequest(Messages.M02);
+            }
+
+            var result = await _userAccount.RefreshTokenAsync(token);
+            return Ok(result);
+        }
     }
 }
